@@ -5,8 +5,7 @@ import (
 	"time"
 )
 
-// Reference:https://leetcode-cn.com/problems/yong-liang-ge-zhan-shi-xian-dui-lie-lcof/
-
+// Reference：https://leetcode-cn.com/problems/yong-liang-ge-zhan-shi-xian-dui-lie-lcof/
 type CQueue struct {
 	in  stack
 	out stack
@@ -31,7 +30,7 @@ func (s *stack) Pop() int {
 	return value
 }
 
-func Constructor() CQueue {
+func Constructor09() CQueue {
 	return CQueue{}
 }
 
