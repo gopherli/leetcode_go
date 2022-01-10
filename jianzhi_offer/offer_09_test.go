@@ -1,4 +1,4 @@
-package day01
+package jianzhi_offer
 
 import (
 	"testing"

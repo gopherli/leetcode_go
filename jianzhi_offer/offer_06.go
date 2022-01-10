@@ -1,11 +1,6 @@
-package day02
+package jianzhi_offer
 
 // Reference：https://leetcode-cn.com/problems/cong-wei-dao-tou-da-yin-lian-biao-lcof/
-
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
 
 func reversePrint(head *ListNode) []int {
 	arr := []int{}

@@ -1,4 +1,4 @@
-package day02
+package jianzhi_offer
 
 import (
 	"fmt"

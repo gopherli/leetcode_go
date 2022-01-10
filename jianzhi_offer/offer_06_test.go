@@ -1,4 +1,4 @@
-package day02
+package jianzhi_offer
 
 import (
 	"fmt"
@@ -6,6 +6,9 @@ import (
 )
 
 func TestOffer06(t *testing.T) {
+	t.Run("six", func(t *testing.T) {
+		t.Errorf("x")
+	})
 	head := ListNode{
 		Val: 0,
 		Next: &ListNode{
