@@ -37,7 +37,4 @@ func TestOffer25(t *testing.T) {
 		resultArr = append(resultArr, result.Val)
 		result = result.Next
 	}
-
-	t.Fatalf("%v", resultArr)
-	t.Fatalf("%v", result)
 }
