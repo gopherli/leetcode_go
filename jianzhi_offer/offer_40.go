@@ -12,7 +12,7 @@ func GetLeastNumbers(arr []int, k int) []int {
 	// sortArr := BubbleSort(arr)
 
 	// 快速排序
-	sortArr := QuickSort(arr)
+	sortArr := QuickSort(arr, k)
 
 	// 取排序数组前k个为新数组
 	return sortArr[:k]
@@ -33,18 +33,20 @@ func BubbleSort(arr []int) []int {
 }
 
 // 快速排序
-func QuickSort(arr []int) []int {
-	return _quickSort(arr, 0, len(arr)-1)
+func QuickSort(arr []int, k int) []int {
+	return _quickSort(arr, 0, len(arr)-1, k)
 }
 
-func _quickSort(arr []int, left, right int) []int {
+func _quickSort(arr []int, left, right, k int) []int {
 	if left < right {
 		// 分区基准
 		partitionIndex := partition(arr, left, right)
 		// 左分区排序
-		_quickSort(arr, left, partitionIndex-1)
+		_quickSort(arr, left, partitionIndex-1, k)
 		// 右分区排序
-		_quickSort(arr, partitionIndex+1, right)
+		if partitionIndex < k {
+			_quickSort(arr, partitionIndex+1, right, k)
+		}
 	}
 	return arr
 }
