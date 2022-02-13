@@ -45,7 +45,7 @@ func Permutation(s string) []string {
 			perm = append(perm, t[j])
 			// 回溯，进行下一个位置的填充
 			backtracking(i + 1)
-			// 回溯完成，i=n完成一个排列，防止perm的append添加上一个结果
+			// // 回溯完成，i=n完成一个排列，防止perm的append添加上一个结果
 			perm = perm[:len(perm)-1]
 			// 回溯完成，i=n完成一个排列，当前j复原false
 			vis[j] = false
