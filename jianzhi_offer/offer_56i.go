@@ -6,7 +6,7 @@ import "fmt"
 
 func SingleNumbers(nums []int) []int {
 	// 1. 快排遍历
-	// return quickSortFor(nums)
+	// return quickSortFor56I(nums)
 
 	// 2. 异或位运算
 	ret := 0
@@ -31,7 +31,7 @@ func SingleNumbers(nums []int) []int {
 }
 
 // 快排遍历
-func QuickSortFor(nums []int) []int {
+func QuickSortFor56I(nums []int) []int {
 	// 判空处理
 	if len(nums) == 0 {
 		return nil
