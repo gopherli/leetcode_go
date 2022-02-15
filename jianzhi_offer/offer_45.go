@@ -7,7 +7,9 @@ import "strconv"
 func MinNumber(arr []int) string {
 	// 字符串数组
 	strs := make([]string, 0)
+	// 遍历整型数组
 	for i := range arr {
+		// 数字转字符串并添加到字符串数组
 		strs = append(strs, strconv.Itoa(arr[i]))
 	}
 
@@ -25,7 +27,9 @@ func MinNumber(arr []int) string {
 
 // 快排
 func _quickSortMinNumber(arr []string, left, right int) {
+	// 前提条件、结束条件
 	if left < right {
+		// 排序
 		privot := left
 		index := left + 1
 		for i := index; i <= right; i++ {
@@ -35,9 +39,13 @@ func _quickSortMinNumber(arr []string, left, right int) {
 				index++
 			}
 		}
+		// 基准值归位
 		arr[privot], arr[index-1] = arr[index-1], arr[privot]
+		// 分区值
 		partitionIndex := index - 1
+		// 左分区排序
 		_quickSortMinNumber(arr, left, partitionIndex-1)
+		// 右分区排序
 		_quickSortMinNumber(arr, partitionIndex+1, right)
 	}
 }
