@@ -3,21 +3,16 @@ package jianzhi_offer
 // https://leetcode-cn.com/problems/que-shi-de-shu-zi-lcof/
 
 func MissingNumber(nums []int) int {
-	misNum := 0
-
-	if len(nums) == 1 {
-		if nums[0] > 0 {
-			misNum = nums[0] - 1
+	// 	不重复排序数组，优先二分法
+	left, right := 0, len(nums)-1
+	// 一定要<=
+	for left <= right {
+		mid := left + (right-left)/2
+		if nums[mid] == mid {
+			left = mid + 1
 		} else {
-			misNum = nums[0] + 1
+			right = mid - 1
 		}
 	}
-
-	for i := 1; i < len(nums); i++ {
-		if nums[i]-nums[i-1] > 1 {
-			misNum = nums[i] - 1
-			break
-		}
-	}
-	return misNum
+	return left
 }
